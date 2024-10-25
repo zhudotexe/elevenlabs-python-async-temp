@@ -318,7 +318,7 @@ class AsyncElevenLabs(AsyncBaseElevenLabs):
     async def generate(
       self,
       *,
-      text: str,
+      text: Union[str, AsyncIterator[str]],
       voice: Union[VoiceId, VoiceName, Voice] = DEFAULT_VOICE,
       voice_settings: typing.Optional[VoiceSettings] = DEFAULT_VOICE.settings,
       model: Union[ModelId, Model] = "eleven_monolingual_v1",
