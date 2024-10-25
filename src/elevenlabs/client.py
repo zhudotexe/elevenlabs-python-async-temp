@@ -318,7 +318,7 @@ class AsyncElevenLabs(AsyncBaseElevenLabs):
     async def generate(
       self,
       *,
-      text: Union[str, AsyncIterator[str]],
+      text: Union[str, AsyncIterable[str]],
       voice: Union[VoiceId, VoiceName, Voice] = DEFAULT_VOICE,
       voice_settings: typing.Optional[VoiceSettings] = DEFAULT_VOICE.settings,
       model: Union[ModelId, Model] = "eleven_monolingual_v1",
@@ -413,7 +413,7 @@ class AsyncElevenLabs(AsyncBaseElevenLabs):
                     request_options=request_options,
                     pronunciation_dictionary_locators=pronunciation_dictionary_locators
                 )
-            elif isinstance(text, AsyncIterator):
+            elif isinstance(text, AsyncIterable):
                 return self.text_to_speech.convert_realtime(  # type: ignore
                     voice_id=voice_id,
                     voice_settings=voice_settings,
