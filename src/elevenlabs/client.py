@@ -5,7 +5,7 @@ import os
 import httpx
 
 from typing import Iterator, Optional, Union, \
-  Optional, AsyncIterator
+  Optional, AsyncIterable
 
 from .base_client import \
   BaseElevenLabs, AsyncBaseElevenLabs
@@ -329,7 +329,7 @@ class AsyncElevenLabs(AsyncBaseElevenLabs):
             typing.Sequence[PronunciationDictionaryVersionLocator]
         ] = OMIT,
       request_options: typing.Optional[RequestOptions] = None
-    ) -> AsyncIterator[bytes]:
+    ) -> AsyncIterable[bytes]:
         """
           This is a manually mnaintained helper function that generates a 
           voice from provided text.
